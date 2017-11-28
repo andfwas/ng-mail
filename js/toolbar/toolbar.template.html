@@ -1,0 +1,106 @@
+<div ng-controller="toolbar as ctrl">
+
+  <div ng-if="(ctrl.selectAll($ctrl.mail)==0)">
+
+
+    <div class="row toolbar">
+
+
+      <div class="col-md-12">
+        <p class="pull-right">
+          <span class="badge badge">2</span> unread messages
+        </p>
+        <a class="btn btn-danger">
+          <i class="fa fa-plus"></i>
+        </a>
+
+        <button ng-if="(ctrl.selectAll($ctrl.mail)==0)" class="btn btn-default" ng-click="ctrl.test($ctrl.mail)">
+          <i class="fa fa-square-o"></i>
+        </button>
+
+        <button ng-if="(ctrl.selectAll($ctrl.mail)==$ctrl.mail.length)" class="btn btn-default" ng-click="ctrl.unselectAll($ctrl.mail)">
+          <i class="fa fa-check-square-o"></i>
+        </button>
+
+        <button class="btn btn-default" disabled="disabled">
+          Mark As Read
+        </button>
+
+        <button class="btn btn-default" disabled="disabled">
+          Mark As Unread
+        </button>
+
+        <select class="form-control label-select" disabled="disabled">
+          <option>Apply label</option>
+          <option value="dev">dev</option>
+          <option value="personal">personal</option>
+          <option value="gschool">gschool</option>
+        </select>
+
+        <select class="form-control label-select" disabled="disabled">
+          <option>Remove label</option>
+          <option value="dev">dev</option>
+          <option value="personal">personal</option>
+          <option value="gschool">gschool</option>
+        </select>
+
+        <button class="btn btn-default" disabled="disabled">
+          <i class="fa fa-trash-o"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div ng-if="(ctrl.selectAll($ctrl.mail)>0)">
+
+    <div class="row toolbar">
+
+
+      <div class="col-md-12">
+        <p class="pull-right">
+          <span class="badge badge">2</span> unread messages
+        </p>
+
+        <a class="btn btn-danger">
+          <i class="fa fa-plus"></i>
+        </a>
+
+        <button ng-if="(ctrl.selectAll($ctrl.mail)==0)" class="btn btn-default" ng-click="ctrl.test($ctrl.mail)">
+          <i class="fa fa-square-o"></i>
+        </button>
+
+        <button ng-if="(ctrl.selectAll($ctrl.mail)<= $ctrl.mail.length) && (ctrl.selectAll($ctrl.mail)>0)" class="btn btn-default" ng-click="ctrl.unselectAll($ctrl.mail)">
+          <i class="fa fa-check-square-o"></i>
+        </button>
+
+        <button class="btn btn-default" >
+          Mark As Read
+        </button>
+
+        <button class="btn btn-default">
+          Mark As Unread
+        </button>
+
+        <select class="form-control label-select" ng-model="labels" ng-options="name.label as name.label for name in ctrl.allLabels track by name.id" ng-change="ctrl.labelSelect(labels, $ctrl.mail)">
+          <option value="">Apply label</option>
+
+        </select>
+
+        <select class="form-control label-select">
+          <option>Remove label</option>
+          <option value="dev">dev</option>
+          <option value="personal">personal</option>
+          <option value="gschool">gschool</option>
+        </select>
+
+        <button class="btn btn-default">
+          <i class="fa fa-trash-o"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
