@@ -74,7 +74,7 @@
           <i class="fa fa-check-square-o"></i>
         </button>
 
-        <button class="btn btn-default" >
+        <button class="btn btn-default" ng-click="ctrl.markAsRead($ctrl.mail)">
           Mark As Read
         </button>
 
@@ -87,11 +87,8 @@
 
         </select>
 
-        <select class="form-control label-select">
-          <option>Remove label</option>
-          <option value="dev">dev</option>
-          <option value="personal">personal</option>
-          <option value="gschool">gschool</option>
+        <select class="form-control label-select" ng-model="deleted" ng-options="name.label as name.label for name in ctrl.allLabels track by name.id" ng-change="ctrl.removeLabel(deleted, $ctrl.mail)">
+          <option value="">Remove label</option>
         </select>
 
         <button class="btn btn-default">

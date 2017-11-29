@@ -48,4 +48,21 @@ angular.module('ngInbox')
         mail[i].labels.sort()
       }
     }
+
+    vm.removeLabel = function(deleted, mail) {
+      console.log(deleted)
+      for (var i = 0; i < mail.length; i++) {
+        if (mail[i].labels.indexOf(deleted) >= 0 && mail[i].selected == true) {
+          mail[i].labels.splice(mail[i].labels.indexOf(deleted), 1)
+        }
+      }
+    }
+
+
+
+    vm.markAsRead = function(mail) {
+      for (var i = 0; i < mail.length; i++) {
+        console.log(mail[i])
+      }
+    }
   }
