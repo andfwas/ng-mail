@@ -40,15 +40,12 @@ angular.module('ngInbox')
       },
     ]
 
-    vm.labelSelect = function(selected, mail) {
-      console.log(typeof selected);
-      console.log(selected);
+    vm.addLabel = function(selected, mail) {
       for (var i = 0; i < mail.length; i++) {
-        console.log(mail[i]);
-        if (mail[i].labels.indexOf(selected) === -1) {
+        if (mail[i].labels.indexOf(selected) === -1 && mail[i].selected == true) {
           mail[i].labels.push(selected)
         }
+        mail[i].labels.sort()
       }
     }
-
   }

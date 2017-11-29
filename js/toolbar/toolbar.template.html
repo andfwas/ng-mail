@@ -82,7 +82,7 @@
           Mark As Unread
         </button>
 
-        <select class="form-control label-select" ng-model="labels" ng-options="name.label as name.label for name in ctrl.allLabels track by name.id" ng-change="ctrl.labelSelect(labels, $ctrl.mail)">
+        <select class="form-control label-select" ng-model="labels" ng-options="name.label as name.label for name in ctrl.allLabels track by name.id" ng-change="ctrl.addLabel(labels, $ctrl.mail)">
           <option value="">Apply label</option>
 
         </select>
