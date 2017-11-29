@@ -1,0 +1,19 @@
+{
+  "name": "ng-mail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/andfwas/ng-mail.git"
+  },
+  "author": "Andy Smart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andfwas/ng-mail/issues"
+  },
+  "homepage": "https://github.com/andfwas/ng-mail#readme"
+}

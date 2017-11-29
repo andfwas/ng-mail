@@ -50,7 +50,6 @@ angular.module('ngInbox')
     }
 
     vm.removeLabel = function(deleted, mail) {
-      console.log(deleted)
       for (var i = 0; i < mail.length; i++) {
         if (mail[i].labels.indexOf(deleted) >= 0 && mail[i].selected == true) {
           mail[i].labels.splice(mail[i].labels.indexOf(deleted), 1)
