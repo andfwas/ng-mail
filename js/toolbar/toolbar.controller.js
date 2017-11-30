@@ -16,6 +16,7 @@ angular.module('ngInbox')
     }
 
     vm.selectAll = function(mail) {
+
       var count = 0
       for (var i = 0; i < mail.length; i++) {
         if (mail[i].selected == true) {
