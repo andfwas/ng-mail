@@ -3,9 +3,7 @@ angular.module('ngInbox')
 
   function toolbar($http) {
     const vm = this
-    const url = 'http://localhost:8082/api/messages'
-    // heroku db
-    // https://andfwas-ng-mail-db.herokuapp.com/api/messages
+    const url = 'https://andfwas-ng-mail-db.herokuapp.com/api/messages'
 
     vm.selectOne = function(mail) {
       for (var i = 0; i < mail.length; i++) {
