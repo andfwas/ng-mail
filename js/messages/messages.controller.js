@@ -3,7 +3,9 @@ angular.module('ngInbox')
 
   function messages($http) {
     const vm = this
-    const url = 'https://andfwas-ng-mail-db.herokuapp.com/api/messages'
+    const url = 'http://localhost:8082/api/messages'
+    // heroku db
+    // https://andfwas-ng-mail-db.herokuapp.com/api/messages
 
     $http.get(url)
     .then((data) => {
