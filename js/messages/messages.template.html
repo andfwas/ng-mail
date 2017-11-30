@@ -1,27 +1,50 @@
 <div ng-controller="messages as ctrl">
   <toolbar mail="ctrl.messages"></toolbar>
-
   <div ng-repeat="message in ctrl.messages">
-    <div class="row message unread selected-{{message.selected}}">
-      <div class="col-xs-1">
-        <div class="row">
-          <div class="col-xs-2">
-            <input type="checkbox" ng-model="message.selected" />
-          </div>
-          <div ng-if="(message.starred == true)" class="col-xs-2">
-            <i ng-click="ctrl.star(message)" class="star fa fa-star"></i>
-          </div>
-          <div ng-if="(message.starred == false)" class="col-xs-2">
-            <i ng-click="ctrl.star(message)" class="star fa fa-star-o"></i>
+
+    <div ng-if="(message.read == false)">
+      <div class="row message unread selected-{{message.selected}}">
+        <div class="col-xs-1">
+          <div class="row">
+            <div class="col-xs-2">
+              <input type="checkbox" ng-model="message.selected" />
+            </div>
+            <div ng-if="(message.starred == true)" class="col-xs-2">
+              <i ng-click="ctrl.star(message)" class="star fa fa-star"></i>
+            </div>
+            <div ng-if="(message.starred == false)" class="col-xs-2">
+              <i ng-click="ctrl.star(message)" class="star fa fa-star-o"></i>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-11">
-        <span class="label label-warning" ng-repeat="label in message.labels">{{label}}</span>
-        <a href="#" ng-click="ctrl.markAsRead(message)">{{message.subject}}</a>
+        <div class="col-xs-11">
+          <span class="label label-warning" ng-repeat="label in message.labels">{{label}}</span>
+          <a href="#" ng-click="ctrl.markAsRead(message)">{{message.subject}}</a>
+        </div>
       </div>
     </div>
+
+    <div ng-if="(message.read == true)">
+      <div class="row message read selected-{{message.selected}}">
+        <div class="col-xs-1">
+          <div class="row">
+            <div class="col-xs-2">
+              <input type="checkbox" ng-model="message.selected" />
+            </div>
+            <div ng-if="(message.starred == true)" class="col-xs-2">
+              <i ng-click="ctrl.star(message)" class="star fa fa-star"></i>
+            </div>
+            <div ng-if="(message.starred == false)" class="col-xs-2">
+              <i ng-click="ctrl.star(message)" class="star fa fa-star-o"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-11">
+          <span class="label label-warning" ng-repeat="label in message.labels">{{label}}</span>
+          <a href="#" ng-click="ctrl.markAsRead(message)">{{message.subject}}</a>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-
 </div>
