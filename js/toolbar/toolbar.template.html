@@ -9,7 +9,7 @@
         <a class="btn btn-danger">
           <i class="fa fa-plus"></i>
         </a>
-        <button ng-if="(ctrl.selectAll($ctrl.mail)==0)" class="btn btn-default" ng-click="ctrl.test($ctrl.mail)">
+        <button ng-if="(ctrl.selectAll($ctrl.mail)==0)" class="btn btn-default" ng-click="ctrl.selectOne($ctrl.mail)">
           <i class="fa fa-square-o"></i>
         </button>
         <button ng-if="(ctrl.selectAll($ctrl.mail)==$ctrl.mail.length)" class="btn btn-default" ng-click="ctrl.unselectAll($ctrl.mail)">
@@ -49,7 +49,7 @@
         <a class="btn btn-danger">
           <i class="fa fa-plus"></i>
         </a>
-        <button ng-if="(ctrl.selectAll($ctrl.mail)==0)" class="btn btn-default" ng-click="ctrl.test($ctrl.mail)">
+        <button ng-if="(ctrl.selectAll($ctrl.mail)==0)" class="btn btn-default" ng-click="ctrl.selectOne($ctrl.mail)">
           <i class="fa fa-square-o"></i>
         </button>
         <button ng-if="(ctrl.selectAll($ctrl.mail)<= $ctrl.mail.length) && (ctrl.selectAll($ctrl.mail)>0)" class="btn btn-default" ng-click="ctrl.unselectAll($ctrl.mail)">
